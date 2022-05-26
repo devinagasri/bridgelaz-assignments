@@ -1,0 +1,26 @@
+for i in  *.*
+
+do
+
+x=`echo $i | awk -F. '{ print $1 }'`
+x1=`echo $i | awk -F. '{ print $2 }'`
+if [ -d $x ]
+
+then
+
+            echo "inside if condition"
+
+            rm -rf $x
+
+    fi
+
+mkdir -p $x/$x1
+
+    cp -r $i $x/$x1
+done
+
+1, at first we are taking all the files in the directory
+2, and i am taking 'name' before'.' as x and name after '.' as x1 (example 'add' as x and 'java' as x1)
+3, if the add directory is already present in 'stage1-review directory' then we need to remove that particular 'add' directory
+4, then we need to create add directory 'x'(add/) and java directoryn1 (add/java)
+5, then we need to copy the file(add.java) in 'stage1-review' to 'add/java/' likewise every file(multiply.py, Division.cd, Sub.js day4.sh) will be created and copied
