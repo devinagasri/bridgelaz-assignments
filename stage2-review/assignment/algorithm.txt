@@ -1,0 +1,8 @@
+temperoryArray=("10" "20" "20" "10" "10" "20" "5" "20")
+printf '%s\n' "${temperoryArray[@]}" | sort | uniq -c | awk '{print $2,$1}'
+
+
+Algorithm:
+1. Intialize the array and give input (10 20 20 10 10 20 5 20)
+2. The array contain duplicates, print all elements and their frequencies-for that we do sorting by using the command awk for filtering
+3. finally it prints the array values with their frequencies
